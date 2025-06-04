@@ -31,11 +31,50 @@
     </section>
     <section id="weather">
       <h3>Current Weather</h3>
-      <div id="weather-info">Loading weather...</div>
+      <div id="weather-info" style="display: flex; align-items: center; gap: 1.5rem; min-height: 80px;">
+        <!-- Weather info with icons will be rendered here by JS -->
+      </div>
     </section>
     <section id="events">
       <h3>Upcoming Events</h3>
-      <ul id="event-list"></ul>
+      <ul id="event-list" style="list-style:none;padding:0;display:flex;flex-direction:column;gap:1.5rem;">
+        <li style="background:#f5f5f5;border-radius:1rem;padding:1rem 1.5rem;box-shadow:0 2px 8px rgba(33,150,243,0.06);display:flex;flex-direction:column;gap:0.5rem;">
+          <strong>International Coastal Cleanup Singapore</strong>
+          <span>📍 East Coast Park | 🗓️ 21 June 2025, 8:00am–11:00am</span>
+          <span>Join volunteers to remove marine debris and collect data for global research.</span>
+          <button style="align-self:flex-start;background:#2196F3;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:2rem;cursor:pointer;font-weight:bold;">Sign Up</button>
+        </li>
+        <li style="background:#f5f5f5;border-radius:1rem;padding:1rem 1.5rem;box-shadow:0 2px 8px rgba(33,150,243,0.06);display:flex;flex-direction:column;gap:0.5rem;">
+          <strong>Changi Beach Family Cleanup</strong>
+          <span>📍 Changi Beach | 🗓️ 13 July 2025, 9:00am–12:00pm</span>
+          <span>Family-friendly event with games and eco-education for all ages.</span>
+          <button style="align-self:flex-start;background:#2196F3;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:2rem;cursor:pointer;font-weight:bold;">Sign Up</button>
+        </li>
+        <li style="background:#f5f5f5;border-radius:1rem;padding:1rem 1.5rem;box-shadow:0 2px 8px rgba(33,150,243,0.06);display:flex;flex-direction:column;gap:0.5rem;">
+          <strong>Pasir Ris Youth Eco-Action</strong>
+          <span>📍 Pasir Ris Beach | 🗓️ 17 August 2025, 8:30am–11:30am</span>
+          <span>Youth groups unite for a morning of cleanup and environmental workshops.</span>
+          <button style="align-self:flex-start;background:#2196F3;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:2rem;cursor:pointer;font-weight:bold;">Sign Up</button>
+        </li>
+        <li style="background:#f5f5f5;border-radius:1rem;padding:1rem 1.5rem;box-shadow:0 2px 8px rgba(33,150,243,0.06);display:flex;flex-direction:column;gap:0.5rem;">
+          <strong>Sembawang Community Beach Sweep</strong>
+          <span>📍 Sembawang Beach | 🗓️ 28 September 2025, 7:30am–10:30am</span>
+          <span>Local residents and friends gather to keep Sembawang Beach clean.</span>
+          <button style="align-self:flex-start;background:#2196F3;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:2rem;cursor:pointer;font-weight:bold;">Sign Up</button>
+        </li>
+        <li style="background:#f5f5f5;border-radius:1rem;padding:1rem 1.5rem;box-shadow:0 2px 8px rgba(33,150,243,0.06);display:flex;flex-direction:column;gap:0.5rem;">
+          <strong>Labrador Nature Reserve Eco Day</strong>
+          <span>📍 Labrador Nature Reserve | 🗓️ 19 October 2025, 8:00am–11:00am</span>
+          <span>Nature lovers and volunteers join for a cleanup and biodiversity walk.</span>
+          <button style="align-self:flex-start;background:#2196F3;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:2rem;cursor:pointer;font-weight:bold;">Sign Up</button>
+        </li>
+        <li style="background:#f5f5f5;border-radius:1rem;padding:1rem 1.5rem;box-shadow:0 2px 8px rgba(33,150,243,0.06);display:flex;flex-direction:column;gap:0.5rem;">
+          <strong>Year-End Mega Beach Cleanup</strong>
+          <span>📍 East Coast Park | 🗓️ 7 December 2025, 8:00am–12:00pm</span>
+          <span>Singapore’s biggest beach cleanup event of the year. All are welcome!</span>
+          <button style="align-self:flex-start;background:#2196F3;color:#fff;border:none;padding:0.5rem 1.2rem;border-radius:2rem;cursor:pointer;font-weight:bold;">Sign Up</button>
+        </li>
+      </ul>
     </section>
   </main>
   <footer>

@@ -53,6 +53,48 @@ function initMap() {
   });
 }
 
+// Fetch weather for Singapore using OpenWeatherMap API
+function fetchSingaporeWeather() {
+  const apiKey = '945569d74ed6c43fd7c3dffbd7bb2f37'; // Replace with your OpenWeatherMap API key
+  const singapore = { lat: 1.3521, lng: 103.8198 };
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${singapore.lat}&lon=${singapore.lng}&units=metric&appid=${apiKey}`;
+  const weatherInfo = document.getElementById('weather-info');
+  weatherInfo.textContent = 'Loading weather...';
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      if (data.cod === 200) {
+        // Weather icons
+        const thermometerIcon = '<img src="https://img.icons8.com/fluency/48/thermometer.png" alt="Thermometer" title="Temperature" style="vertical-align:middle;width:32px;height:32px;">';
+        const windIcon = '<img src="https://img.icons8.com/fluency/48/wind.png" alt="Wind" title="Wind Speed" style="vertical-align:middle;width:32px;height:32px;">';
+        const weatherIcon = `<img src='https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png' alt='${data.weather[0].main}' title='${data.weather[0].description}' style='vertical-align:middle;width:48px;height:48px;'>`;
+        weatherInfo.innerHTML = `
+          <div style='display:flex;align-items:center;gap:1rem;'>
+            ${weatherIcon}
+            <div>
+              <strong>Weather in Singapore</strong><br>
+              ${data.weather[0].main} (${data.weather[0].description})
+            </div>
+          </div>
+          <div style='display:flex;align-items:center;gap:0.5rem;'>
+            ${thermometerIcon}
+            <span>Temp: ${data.main.temp}&deg;C</span>
+          </div>
+          <div style='display:flex;align-items:center;gap:0.5rem;'>
+            ${windIcon}
+            <span>Wind: ${data.wind.speed} m/s</span>
+          </div>
+          <div style='margin-top:0.5rem;'>Humidity: ${data.main.humidity}%</div>
+        `;
+      } else {
+        weatherInfo.textContent = 'Weather data unavailable.';
+      }
+    })
+    .catch(() => {
+      weatherInfo.textContent = 'Weather data unavailable.';
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Join button interaction
   document.getElementById('join-btn').addEventListener('click', () => {
@@ -68,6 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Placeholder: Load weather
   document.getElementById('weather-info').textContent = 'Weather data coming soon!';
 
-  // Placeholder: Load events
-  document.getElementById('event-list').innerHTML = '<li>Event loading soon!</li>';
+  // Fetch weather for Singapore
+  fetchSingaporeWeather();
 });

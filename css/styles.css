@@ -66,7 +66,7 @@ section {
   padding: 1rem;
 }
 
-#map-container, #weather-info {
+#map-container {
   min-height: 200px;
   background: #e3f2fd;
   border-radius: 1rem;
@@ -74,6 +74,19 @@ section {
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+}
+
+#weather-info {
+  min-height: 200px;
+  background: #e0f7fa; /* Light cyan for weather section */
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+  padding: 1.5rem 1rem;
+  gap: 1.5rem;
 }
 
 footer {
